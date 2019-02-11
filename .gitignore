@@ -78,4 +78,7 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-# css css*.css
+
+# css 
+css
+*.css
