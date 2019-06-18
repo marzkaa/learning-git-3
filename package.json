@@ -1,39 +1,45 @@
 {
-    "name": "zad-1-4",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "npm-run-all test:*",
-        "test:html": "globstar nu-html-checker *.html",
-        "init-project": "npm install && npm-run-all init:*",
-        "init:dirs": "mkdirp sass css vendor images js",
-        "init:files": "touch README.md index.html sass/style.scss js/script.js",
-        "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
-        "build": "npm-run-all build:* test",
-        "build:clean": "rimraf css/*.css",
-        "build:sass": "node-sass --output-style compact -o css sass",
-        "build:autoprefixer": "autoprefixer-cli css/style.css",
-        "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-        "watch": "npm-run-all build -p watch:*",
-        "watch:sassprefixer": "onchange -d 100 sass/* -- npm-run-all -s sass autoprefixer",
-        "sass": "node-sass --output-style expanded --source-map true -o css sass",
-        "autoprefixer": "autoprefixer-cli -o css/style.css css/style.css",
-        "watch:browsersync": "browser-sync start --server --files css/*.css *.html"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "autoprefixer-cli": "^1.0.0",
-        "browser-sync": "^2.26.3",
-        "globstar": "^1.0.0",
-        "node-sass": "^4.11.0",
-        "npm-run-all": "^4.1.5",
-        "nu-html-checker": "^0.1.0",
-        "onchange": "^5.2.0",
-        "rimraf": "^2.6.3"
-    },
-    "dependencies": {     
-    }
+  "name": "zad-1-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --env production",
+    "start": "webpack-dev-server --hot --env development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "optimize-js-plugin": "0.0.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.4",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "uuid": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marzkaa/learning-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marzkaa/learning-js/issues"
+  },
+  "homepage": "https://github.com/marzkaa/learning-js#readme"
 }
